@@ -21,7 +21,7 @@ public class LibroRepository {
         listaLibros.add(new Libro(2, "978-1617294945", "Spring in Action", "Manning", 2020, "Craig Walls"));
     }
 
-    public Libro<Libro> obtenerLibros(){
+    public List<Libro> obtenerLibros(){
         return listaLibros;
 
     }
@@ -29,16 +29,37 @@ public class LibroRepository {
     public Libro buscarLibroPorId(int id){
 
         for(Libro libro : listaLibros){
-            if(libro.getId() == id)
+            if(libro.getId() == id);
         }
 
         return null;
     }
 
     // Buscar libro por isbn
+    public Libro buscarPorIsbn(String isbn){
+        
+        for(Libro libro : listaLibros){
+            if(isbn == libro.getIsbn()){
+                return libro;
+            }
+        }
+        return null;
+    }
+
 
     // Buscar libro por autor
+    public Libro buscarLibroPorAutor(String autor){
 
+        for(Libro libro : listaLibros){
+            if(autor == libro.getAutor()){
+                return libro;
+            }        
+        }
+        return null;
+    }
+
+
+    //Actualizar Libro
     public Libro actualizar(Libro lib){
 
         int id = 0;
@@ -50,6 +71,16 @@ public class LibroRepository {
                 idPosicion = i;
             }
         }
-        return null;
+        Libro libro1 = new Libro();
+        libro1.setId(id);
+        libro1.setTitulo(lib.getTitulo());
+        libro1.setAutor(lib.getAutor());
+        libro1.setEditorial(lib.getEditorial());
+        libro1.setFechaPublicacion(lib.getFechaPublicacion());
+        libro1.setIsbn(lib.getIsbn());
+
+
+
+        return libro1;
     }
-}    
+}
