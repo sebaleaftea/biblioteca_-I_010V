@@ -16,7 +16,20 @@ public class LibroService {
         return repoLibro.buscarLibroPorId(id);
     }
 
-    
+    public Libro obtenerLibroPorIsbn(String isbn){
+        return repoLibro.buscarPorIsbn(isbn);
+    }
 
+    public Libro obtenerLibroPorAutor(String autor){
+        return repoLibro.buscarLibroPorAutor(autor);
+    }
 
+    public Libro actualizarLibro(Libro lib){
+        return repoLibro.actualizar(lib);
+    }
+
+    public String eliminarLibro(int id){
+        repoLibro.eliminar(id);
+        return "Libro eliminado";
+    }
 }
