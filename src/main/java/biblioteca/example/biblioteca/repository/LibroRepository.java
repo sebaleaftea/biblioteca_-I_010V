@@ -58,6 +58,11 @@ public class LibroRepository {
         return null;
     }
 
+    public Libro guardar(Libro lib){
+        listaLibros.add(lib);
+        return lib;
+    }
+
 
     //Actualizar Libro
     public Libro actualizar(Libro lib){

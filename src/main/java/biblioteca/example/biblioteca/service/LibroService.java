@@ -24,6 +24,10 @@ public class LibroService {
         return repoLibro.buscarLibroPorAutor(autor);
     }
 
+    public Libro guardarLibro(Libro lib){
+        return repoLibro.guardar(lib);
+    }
+
     public Libro actualizarLibro(Libro lib){
         return repoLibro.actualizar(lib);
     }
